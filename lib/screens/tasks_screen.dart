@@ -12,6 +12,7 @@ class TasksScreens extends StatelessWidget {
         child: Icon(
           Icons.add,
         ),
+        onPressed: () {},
       ),
       backgroundColor: Colors.lightBlueAccent,
       body: Column(
@@ -51,6 +52,27 @@ class TasksScreens extends StatelessWidget {
           ),
           Expanded(
             child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: ListView(
+                children: [
+                  ListTile(
+                    title: Text(
+                      'This is a task',
+                    ),
+                    trailing: Checkbox(
+                      value: false,
+                      onChanged: (bool newValue) {},
+                    ),
+                  ),
+                  ListTile(
+                    title: Text('This is a task'),
+                    trailing: Checkbox(
+                      value: false,
+                      onChanged: (bool newValue) {},
+                    ),
+                  )
+                ],
+              ),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
