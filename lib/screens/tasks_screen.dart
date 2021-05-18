@@ -1,16 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todoey_flutter/widgets/tasks_list.dart';
+import 'package:todoey_flutter/screens/add_listTile_screen.dart';
 
 class TasksScreens extends StatelessWidget {
-  Widget buildBottomSheet(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Bottom Sheet Widget'),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +13,10 @@ class TasksScreens extends StatelessWidget {
           Icons.add,
         ),
         onPressed: () {
-          showModalBottomSheet(context: context, builder: buildBottomSheet);
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => AddListTile(),
+          );
         },
       ),
       backgroundColor: Colors.lightBlueAccent,
