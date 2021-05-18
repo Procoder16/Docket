@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/widgets/tasks_list.dart';
 
 class TasksScreens extends StatelessWidget {
   const TasksScreens({Key key}) : super(key: key);
@@ -64,34 +65,6 @@ class TasksScreens extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class TasksList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
-      ],
-    );
-  }
-}
-
-class TaskTile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        'This is a task',
-      ),
-      trailing: Checkbox(
-        value: false,
-        onChanged: (bool newValue) {},
       ),
     );
   }
