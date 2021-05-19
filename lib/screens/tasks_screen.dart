@@ -2,8 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todoey_flutter/widgets/tasks_list.dart';
 import 'package:todoey_flutter/screens/add_listTile_screen.dart';
+import 'package:todoey_flutter/models/tasks.dart';
 
-class TasksScreens extends StatelessWidget {
+class TasksScreens extends StatefulWidget {
+  @override
+  _TasksScreensState createState() => _TasksScreensState();
+}
+
+class _TasksScreensState extends State<TasksScreens> {
+  List<Task> tasks = [
+    Task(name: 'Buy milk'),
+    Task(name: 'Buy egg'),
+    Task(name: 'Buy bread'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +27,18 @@ class TasksScreens extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddListTile(),
+            builder: (context) => AddListTile(
+              (newTaskTitle) {
+                setState(
+                  () {
+                    tasks.add(
+                      Task(name: newTaskTitle),
+                    );
+                    Navigator.pop(context);
+                  },
+                );
+              },
+            ),
           );
         },
       ),
@@ -49,7 +72,7 @@ class TasksScreens extends StatelessWidget {
                       fontSize: 50.0),
                 ),
                 Text(
-                  '12 Tasks',
+                  '${tasks.length} Tasks',
                   style: TextStyle(color: Colors.white, fontSize: 18.0),
                 ),
               ],
@@ -58,7 +81,7 @@ class TasksScreens extends StatelessWidget {
           Expanded(
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: TasksList(),
+              child: TasksList(tasks),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
