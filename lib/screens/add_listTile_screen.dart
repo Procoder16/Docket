@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/models/tasks.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey_flutter/models/tasks_data.dart';
 
 class AddListTile extends StatelessWidget {
-  final Function addTaskCallBack;
-  AddListTile(this.addTaskCallBack);
-
   @override
   Widget build(BuildContext context) {
     String newTaskTitle;
@@ -35,12 +35,12 @@ class AddListTile extends StatelessWidget {
               },
             ),
             FlatButton(
-              onPressed: () {
-                print(newTaskTitle);
-              },
-              color: Colors.lightBlueAccent,
-              child: Text('Add'),
-            ),
+                child: Text('Add'),
+                color: Colors.lightBlueAccent,
+                onPressed: () {
+                  Provider.of<TaskData>(context).addTask(newTaskTitle);
+                  Navigator.pop(context);
+                }),
           ],
         ),
       ),
