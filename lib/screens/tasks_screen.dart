@@ -13,7 +13,7 @@ class _TasksScreensState extends State<TasksScreens> {
   List<Task> tasks = [
     Task(name: 'Buy milk'),
     Task(name: 'Buy egg'),
-    Task(name: 'Buy bread'),
+    // Task(name: 'Buy bread'),
   ];
 
   @override

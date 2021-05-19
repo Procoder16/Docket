@@ -24,7 +24,7 @@ class _TasksListState extends State<TasksList> {
               });
             });
       },
-      itemCount: 4,
+      itemCount: 3,
     );
   }
 }

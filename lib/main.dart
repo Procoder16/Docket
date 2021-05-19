@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screens/tasks_screen.dart';
 
 void main() {
@@ -10,9 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: TasksScreens(),
+    return Provider(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: TasksScreens(),
+      ),
     );
   }
 }
