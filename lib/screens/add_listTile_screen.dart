@@ -38,7 +38,8 @@ class AddListTile extends StatelessWidget {
                 child: Text('Add'),
                 color: Colors.lightBlueAccent,
                 onPressed: () {
-                  Provider.of<TaskData>(context).addTask(newTaskTitle);
+                  Provider.of<TaskData>(context, listen: false)
+                      .addTask(newTaskTitle);
                   Navigator.pop(context);
                 }),
           ],
