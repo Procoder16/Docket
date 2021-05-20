@@ -19,14 +19,21 @@ class TaskTile extends StatelessWidget {
       title: Text(
         taskTitle,
         style: TextStyle(
-            decoration: isChecked ? TextDecoration.lineThrough : null,
+            color: Colors.white,
+            decoration: isChecked ? (TextDecoration.lineThrough) : null,
+            decorationColor: Color(0xFFFE8268),
+            decorationThickness: 3.0,
             fontSize: 20.0,
             fontWeight: FontWeight.bold),
       ),
-      trailing: Checkbox(
-        activeColor: Colors.lightBlueAccent,
-        value: isChecked,
-        onChanged: checkboxCallback,
+      trailing: Theme(
+        data: ThemeData(unselectedWidgetColor: Colors.white),
+        child: Checkbox(
+          hoverColor: Colors.white,
+          activeColor: Color(0xFFFE8268),
+          value: isChecked,
+          onChanged: checkboxCallback,
+        ),
       ),
     );
   }

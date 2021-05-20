@@ -25,17 +25,33 @@ class AddListTile extends StatelessWidget {
             Text(
               'Add Task',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 30.0),
+              style: TextStyle(color: Color(0xFFFE8268), fontSize: 30.0),
             ),
             TextField(
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFFFE8268)),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFFFE8268)),
+                ),
+              ),
+              cursorColor: Color(0xFFFE8268),
               autofocus: true,
               textAlign: TextAlign.center,
               onChanged: (newText) {
                 newTaskTitle = newText;
               },
             ),
+            SizedBox(
+              height: 5.0,
+            ),
             FlatButton(
-                child: Text('Add'),
+                child: Text(
+                  'Add',
+                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                ),
                 color: Color(0xFFFE8268),
                 onPressed: () {
                   Provider.of<TaskData>(context, listen: false)
