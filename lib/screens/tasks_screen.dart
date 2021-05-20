@@ -34,10 +34,13 @@ class TasksScreens extends StatelessWidget {
                 CircleAvatar(
                   radius: 30.0,
                   backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.list,
-                    size: 30.0,
-                    color: Color(0xFF151153),
+                  // child: Icon(
+                  //   Icons.list,
+                  //   size: 30.0,
+                  //   color: Color(0xFF151153),
+                  // ),
+                  child: Image(
+                    image: AssetImage('images/docket.jpg'),
                   ),
                 ),
                 SizedBox(
