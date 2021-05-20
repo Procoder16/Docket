@@ -9,11 +9,11 @@ class AddListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     String newTaskTitle;
     return Container(
-      color: Color(0xFF757575),
+      color: Color(0xFF141432),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color(0xFF21215A),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
@@ -25,7 +25,7 @@ class AddListTile extends StatelessWidget {
             Text(
               'Add Task',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.lightBlueAccent, fontSize: 30.0),
+              style: TextStyle(color: Colors.white, fontSize: 30.0),
             ),
             TextField(
               autofocus: true,
@@ -36,7 +36,7 @@ class AddListTile extends StatelessWidget {
             ),
             FlatButton(
                 child: Text('Add'),
-                color: Colors.lightBlueAccent,
+                color: Color(0xFFFE8268),
                 onPressed: () {
                   Provider.of<TaskData>(context, listen: false)
                       .addTask(newTaskTitle);

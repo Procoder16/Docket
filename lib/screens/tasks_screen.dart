@@ -10,7 +10,7 @@ class TasksScreens extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Color(0xFFFE8268),
         child: Icon(
           Icons.add,
         ),
@@ -21,7 +21,7 @@ class TasksScreens extends StatelessWidget {
           );
         },
       ),
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Color(0xFF151153),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -37,7 +37,7 @@ class TasksScreens extends StatelessWidget {
                   child: Icon(
                     Icons.list,
                     size: 30.0,
-                    color: Colors.lightBlueAccent,
+                    color: Color(0xFF151153),
                   ),
                 ),
                 SizedBox(
@@ -62,7 +62,7 @@ class TasksScreens extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: TasksList(),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color(0xFF262570),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   topRight: Radius.circular(20.0),
