@@ -53,9 +53,28 @@ class TasksScreens extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       fontSize: 50.0),
                 ),
-                Text(
-                  '${Provider.of<TaskData>(context).taskCount} Tasks',
-                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                // Text(
+                //   '${Provider.of<TaskData>(context).taskCount} Tasks',
+                //   style: TextStyle(color: Colors.white, fontSize: 18.0),
+                // ),
+                Row(
+                  children: [
+                    Text(
+                      '${Provider.of<TaskData>(context).taskCount}',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      ' Tasks',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
